@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feedback - DUMB NOKIA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="logo">DUMB NOKIA PROJECTS</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT ME</a>
+<a href="downloads.html">DOWNLOADS</a>
+<a href="gallery.html">GALLERY</a>
+<a href="feedback.html">FEEDBACK</a>
+</nav>
+</header>
+
+<main>
+<h1>FEEDBACK</h1>
+<div class="card">
+<h2>Do you like my website?</h2>
+<p>First, choose your opinion!</p>
+
+<button class="btn" onclick="choose('GOOD')">👍 GOOD</button>
+<button class="btn bad" onclick="choose('BAD')">👎 BAD</button>
+
+<div id="writing" style="display:none">
+<h2 id="question"></h2>
+<textarea id="message" rows="5"
+placeholder="Write your feedback here..."></textarea>
+<button class="btn" onclick="sendFeedback()">SEND FEEDBACK</button>
+<p id="info"></p>
+</div>
+</div>
+</main>
+
+<footer>DUMB NOKIA PROJECTS © 2026</footer>
+
+<script>
+let opinion = "";
+
+function choose(value) {
+  opinion = value;
+  document.getElementById("writing").style.display = "block";
+  document.getElementById("question").textContent =
+    value === "GOOD"
+    ? "What did you like?"
+    : "What should I improve?";
+  document.getElementById("message").value = "";
+  document.getElementById("info").textContent = "";
+}
+
+function sendFeedback() {
+  const message = document.getElementById("message").value.trim();
+
+  if (!message) {
+    document.getElementById("info").textContent =
+      "Please write something first!";
+    return;
+  }
+
+  const title = "Website Feedback: " + opinion;
+  const body = "Opinion: " + opinion +
+    "\n\nFeedback:\n" + message;
+
+  const url =
+    "https://github.com/EGEpro719/dumbnokiaprojects.github.io/issues/new?title=" +
+    encodeURIComponent(title) +
+    "&body=" + encodeURIComponent(body);
+
+  window.location.href = url;
+}
+</script>
+</body>
+</html>
