@@ -1,12 +1,309 @@
+
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dumb Nokia Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DUMB NOKIA PROJECTS</title>
+<style>
+:root {
+  --bg:#080d13;
+  --panel:#111c26;
+  --green:#aaff00;
+  --cyan:#00e5ff;
+  --text:#eff8ff;
+  --muted:#91a5b5;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+}
+header {
+  padding:24px 7%;
+  background:#0d1721;
+  border-bottom:1px solid #253746;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.logo {
+  color:var(--green);
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.logo span { color:white; }
+nav { display:flex; flex-wrap:wrap; gap:8px; }
+nav a {
+  color:var(--muted);
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:8px;
+  font-size:13px;
+}
+nav a:hover {
+  background:#263746;
+  color:var(--green);
+}
+.hero {
+  padding:85px 8%;
+  text-align:center;
+  background:radial-gradient(ellipse at top,#193343,#080d13 70%);
+}
+.tag {
+  color:var(--green);
+  letter-spacing:4px;
+  font-size:12px;
+}
+h1 {
+  font-size:clamp(34px,7vw,65px);
+  margin:18px 0;
+}
+h1 span { color:var(--green); }
+.hero p {
+  color:var(--muted);
+  line-height:1.7;
+}
+.btn {
+  display:inline-block;
+  background:var(--green);
+  color:#101609;
+  padding:13px 22px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:12px 5px;
+}
+.btn.secondary {
+  background:transparent;
+  color:var(--cyan);
+  border:1px solid var(--cyan);
+}
+section {
+  padding:55px 8%;
+  max-width:1150px;
+  margin:auto;
+}
+.section-title {
+  font-size:27px;
+  margin-bottom:10px;
+}
+.section-title span { color:var(--green); }
+.subtitle {
+  color:var(--muted);
+  margin-bottom:28px;
+  line-height:1.6;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+}
+.card {
+  background:var(--panel);
+  border:1px solid #293b4b;
+  border-radius:13px;
+  padding:22px;
+  transition:.2s;
+}
+.card:hover {
+  transform:translateY(-4px);
+  border-color:var(--green);
+}
+.card h3 { margin-top:0; }
+.card p {
+  color:var(--muted);
+  line-height:1.6;
+  font-size:14px;
+}
+.icon {
+  font-size:30px;
+  margin-bottom:12px;
+}
+.download-link {
+  display:block;
+  background:#1d2e3b;
+  color:var(--green);
+  padding:12px;
+  text-align:center;
+  border-radius:7px;
+  text-decoration:none;
+  margin-top:10px;
+  font-weight:bold;
+}
+.download-link:hover { background:#304a59; }
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.gallery-grid img {
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid #35495b;
+  cursor:pointer;
+  transition:.2s;
+}
+.gallery-grid img:hover { transform:scale(1.02); }
+.about-box {
+  background:var(--panel);
+  border-left:4px solid var(--green);
+  padding:25px;
+  border-radius:8px;
+  line-height:1.8;
+  color:#c6d5df;
+}
+.status {
+  color:var(--green);
+  font-size:12px;
+  letter-spacing:2px;
+}
+footer {
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+  background:#0d1721;
+  border-top:1px solid #253746;
+  font-size:12px;
+}
+#viewer {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000e;
+  z-index:10;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+#viewer img {
+  max-width:95%;
+  max-height:85vh;
+  border-radius:10px;
+}
+#viewer button {
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:var(--green);
+  border:0;
+  padding:12px;
+  border-radius:7px;
+  font-weight:bold;
+}
+@media(max-width:600px) {
+  header { justify-content:center; }
+  nav { justify-content:center; }
+  .hero { padding:65px 5%; }
+  section { padding:42px 6%; }
+}
+</style>
 </head>
-<body style="background:#101827;color:#00ff99;text-align:center;font-family:Arial">
-<h1>DUMB NOKIA PROJECTS</h1>
-<p>Welcome to my Nokia laboratory!</p>
-<p>Java ME • Nokia • Experiments</p>
+<body>
+
+<header>
+  <div class="logo">DUMB <span>NOKIA</span></div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT ME</a>
+    <a href="#downloads">DOWNLOADS</a>
+    <a href="#gallery">GALLERY</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="tag">WELCOME TO MY PROJECT WORLD</div>
+  <h1>DUMB NOKIA <span>PROJECTS</span></h1>
+  <p>
+    Small projects. Big ideas.<br>
+    Nokia, Java ME, games and experiments.
+  </p>
+  <a class="btn" href="#downloads">EXPLORE PROJECTS</a>
+  <a class="btn secondary" href="#gallery">VIEW GALLERY</a>
+</div>
+
+<section id="about">
+  <div class="status">01 / ABOUT</div>
+  <h2 class="section-title">ABOUT <span>ME</span></h2>
+  <div class="about-box">
+    Welcome to DUMB NOKIA PROJECTS!<br><br>
+    This is an independent project archive featuring
+    Java ME applications, Nokia-compatible games,
+    experiments and creative software projects.<br><br>
+    My goal is to create, experiment and bring
+    interesting ideas to life.
+    <br><br>
+    <strong style="color:#aaff00">WORK SMART NOT HARD.</strong>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="status">02 / SOFTWARE</div>
+  <h2 class="section-title">PROJECT <span>DOWNLOADS</span></h2>
+  <p class="subtitle">Download available project versions.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Scratch Pocket Edition</h3>
+      <p>A portable Scratch-inspired pixel creation project.</p>
+      <a class="download-link" href="Scratch_Pocket_English.jar" download>
+        🇬🇧 ENGLISH DOWNLOAD
+      </a>
+      <a class="download-link" href="Scratch_Pocket_Turkish.jar" download>
+        🇹🇷 TÜRKÇE İNDİR
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧪</div>
+      <h3>More projects</h3>
+      <p>More games and experiments coming soon!</p>
+      <span class="status">COMING SOON</span>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="status">03 / SCREENSHOTS</div>
+  <h2 class="section-title">PROJECT <span>GALLERY</span></h2>
+  <p class="subtitle">
+    Screenshots from my projects. Tap an image to enlarge it.
+  </p>
+
+  <div class="gallery-grid">
+    <img src="english1.jpg" alt="Scratch Pocket English screenshot" onclick="showImage(this)">
+    <img src="english2.jpg" alt="Scratch Pocket English screenshot 2" onclick="showImage(this)">
+  </div>
+</section>
+
+<div id="viewer" onclick="closeImage()">
+  <button onclick="closeImage()">CLOSE ✕</button>
+  <img id="bigImage" src="" alt="Gallery preview">
+</div>
+
+<footer>
+  DUMB NOKIA PROJECTS © 2026<br>
+  WORK SMART NOT HARD.
+</footer>
+
+<script>
+function showImage(img) {
+  document.getElementById("bigImage").src = img.src;
+  document.getElementById("viewer").style.display = "flex";
+}
+function closeImage() {
+  document.getElementById("viewer").style.display = "none";
+}
+</script>
+
 </body>
 </html>
