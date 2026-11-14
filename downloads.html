@@ -17,7 +17,11 @@
   background: #101820;
   color: white;
 }
-.download-card h2 { color: #aaff00; }
+
+.download-card h2 {
+  color: #aaff00;
+}
+
 .download-link {
   display: inline-block;
   margin-top: 10px;
@@ -28,15 +32,18 @@
   text-decoration: none;
   font-weight: bold;
 }
+
 .screen-size {
   color: #aaff00;
   font-size: 13px;
   margin-left: 8px;
 }
+
 .error {
   color: #ff6868;
   font-weight: bold;
 }
+
 .preview-photos {
   position: absolute;
   top: 10px;
@@ -44,6 +51,7 @@
   display: flex;
   gap: 5px;
 }
+
 .preview-photos img {
   width: 48px;
   height: 48px;
@@ -52,6 +60,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
 #photoViewer {
   display: none;
   position: fixed;
@@ -62,6 +71,7 @@
   justify-content: center;
   cursor: pointer;
 }
+
 #photoViewer img {
   max-width: 95vw;
   max-height: 90vh;
@@ -73,6 +83,7 @@
 </head>
 
 <body>
+
 <header>
   <h1>DUMB NOKIA PROJECTS</h1>
   <nav>
@@ -85,44 +96,85 @@
 </header>
 
 <main>
+
 <h1>Downloads</h1>
 <p>Download my projects and try them on your device!</p>
 
+<!-- SCRATCH POCKET ENGLISH -->
 <div class="download-card">
+
   <div class="preview-photos">
-    <img src="english1.jpg" alt="Scratch Pocket English screenshot" onclick="openPhoto(this.src)">
-    <img src="english2.jpg" alt="Scratch Pocket English screenshot" onclick="openPhoto(this.src)">
+    <img src="english1.jpg"
+         alt="Screenshot 1"
+         onclick="openPhoto(this.src)">
+
+    <img src="english2.jpg"
+         alt="Screenshot 2"
+         onclick="openPhoto(this.src)">
   </div>
+
   <h2>Scratch Pocket Edition English</h2>
   <p>English version of Scratch Pocket Edition.</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-  <a class="download-link" href="./Scratch_Pocket_English_EGEpro719.jar" download>Download English</a>
+
+  <a class="download-link"
+     href="./Scratch_Pocket_English_EGEpro719.jar"
+     download>
+     Download English
+  </a>
 </div>
 
+<!-- SCRATCH POCKET TURKISH -->
 <div class="download-card">
+
   <h2>Scratch Pocket Edition Turkish</h2>
   <p>Scratch Pocket Edition'ın Türkçe sürümü.</p>
   <p>Ekran boyutu: <span class="screen-size">320×240</span></p>
-  <a class="download-link" href="./Scratch_Pocket_Turkish_EGEpro719.jar" download>Türkçe İndir</a>
+
+  <a class="download-link"
+     href="./Scratch_Pocket_Turkish_EGEpro719.jar"
+     download>
+     Türkçe İndir
+  </a>
 </div>
 
+<!-- FNF MINI ORIGINAL -->
 <div class="download-card">
+
   <h2>Friday Night Funkin' Mini</h2>
-  <p class="error">⚠ ERROR FOUND — This version has a known issue.</p>
+
+  <p class="error">
+    ⚠ ERROR FOUND — This version has a known issue.
+  </p>
+
   <p>A small Friday Night Funkin' game for Java phones.</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-  <a class="download-link" href="./FnfMini%20(1).jar" download>Download FNF Mini</a>
+
+  <a class="download-link"
+     href="./FNFMini%20(1).jar"
+     download>
+     Download FNF Mini
+  </a>
 </div>
 
+<!-- FNF MINI VS TRICKY -->
 <div class="download-card">
+
   <h2>Friday Night Funkin' Mini vs Tricky</h2>
+
   <p>A Friday Night Funkin' Mini mod featuring Tricky!</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-  <a class="download-link" href="./FnfMiniVsTricky%20(1).jar" download>Download FNF Mini vs Tricky</a>
+
+  <a class="download-link"
+     href="./FNFMiniVsTricky%20(1).jar"
+     download>
+     Download FNF Mini vs Tricky
+  </a>
 </div>
 
 </main>
 
+<!-- PHOTO VIEWER -->
 <div id="photoViewer" onclick="closePhoto()">
   <img id="largePhoto" src="" alt="Expanded screenshot">
 </div>
@@ -132,6 +184,7 @@ function openPhoto(src) {
   document.getElementById("largePhoto").src = src;
   document.getElementById("photoViewer").style.display = "flex";
 }
+
 function closePhoto() {
   document.getElementById("photoViewer").style.display = "none";
   document.getElementById("largePhoto").src = "";
