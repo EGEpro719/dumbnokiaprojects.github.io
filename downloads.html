@@ -82,7 +82,7 @@
   border-radius: 8px;
 }
 
-#testsArea, #scratchEarlyVersions {
+#testsArea, #scratchEarlyVersions, #nokiaBaldi {
   display: none;
 }
 
@@ -145,7 +145,6 @@
 
 <!-- SCRATCH POCKET ENGLISH -->
 <div class="download-card">
-
   <div class="preview-photos">
     <img src="english1.jpg" alt="Screenshot 1"
          onclick="openPhoto(this.src)">
@@ -156,7 +155,6 @@
   <h2>Scratch Pocket Edition English</h2>
   <p>English version of Scratch Pocket Edition.</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-
   <a class="download-link"
      href="./Scratch_Pocket_English_EGEpro719.jar" download>
      Download English
@@ -165,11 +163,9 @@
 
 <!-- SCRATCH POCKET TURKISH -->
 <div class="download-card">
-
   <h2>Scratch Pocket Edition Turkish</h2>
   <p>Scratch Pocket Edition'ın Türkçe sürümü.</p>
   <p>Ekran boyutu: <span class="screen-size">320×240</span></p>
-
   <a class="download-link"
      href="./Scratch_Pocket_Turkish_EGEpro719.jar" download>
      Türkçe İndir
@@ -178,12 +174,10 @@
 
 <!-- FNF MINI -->
 <div class="download-card">
-
   <h2>Friday Night Funkin' Mini</h2>
   <p class="error">⚠ ERROR FOUND — This version has a known issue.</p>
   <p>A small Friday Night Funkin' game for Java phones.</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-
   <a class="download-link"
      href="./FNFMini%20(1).jar" download>
      Download FNF Mini
@@ -192,11 +186,9 @@
 
 <!-- FNF MINI VS TRICKY -->
 <div class="download-card">
-
   <h2>Friday Night Funkin' Mini vs Tricky</h2>
   <p>A Friday Night Funkin' Mini mod featuring Tricky!</p>
   <p>Screen size: <span class="screen-size">320×240</span></p>
-
   <a class="download-link"
      href="./FNFMiniVsTricky%20(1).jar" download>
      Download FNF Mini vs Tricky
@@ -217,14 +209,13 @@
 
   <h2>Test Categories</h2>
 
+  <!-- SCRATCHPE CATEGORY -->
   <button class="category-button" onclick="toggleEarlyVersions()">
     ScratchPE Early Versions
   </button>
 
   <div id="scratchEarlyVersions">
-
     <div class="test-category">
-
       <h3>ScratchPE Early Versions</h3>
 
       <div class="warning">
@@ -374,6 +365,39 @@
       </div>
     </div>
   </div>
+
+  <!-- NOKIABALDI CATEGORY -->
+  <button class="category-button" onclick="toggleNokiaBaldi()">
+    NokiaBaldi
+  </button>
+
+  <div id="nokiaBaldi">
+    <div class="test-category">
+      <h3>NokiaBaldi</h3>
+
+      <p class="error">⚠ UNRELEASED VERSION</p>
+
+      <div class="warning">
+        <strong>⚠ ENGLISH WARNING</strong><br>
+        This is an unreleased version.
+        It is for testing and entertainment purposes only.
+
+        <hr>
+
+        <strong>⚠ TÜRKÇE UYARI</strong><br>
+        Bu yayınlanmamış bir sürümdür.
+        Yalnızca test ve eğlence amaçlıdır.
+      </div>
+
+      <p>File: <strong>BaldiBasics.jar</strong></p>
+
+      <a class="download-link"
+         href="./BaldiBasics.jar" download>
+        Download NokiaBaldi
+      </a>
+    </div>
+  </div>
+
 </div>
 
 </main>
@@ -392,6 +416,12 @@ function toggleTests() {
 
 function toggleEarlyVersions() {
   const area = document.getElementById("scratchEarlyVersions");
+  area.style.display =
+    area.style.display === "block" ? "none" : "block";
+}
+
+function toggleNokiaBaldi() {
+  const area = document.getElementById("nokiaBaldi");
   area.style.display =
     area.style.display === "block" ? "none" : "block";
 }
