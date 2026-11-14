@@ -5,134 +5,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Downloads - DUMB NOKIA PROJECTS</title>
-<link rel="stylesheet" href="style.css">
 
 <style>
-.download-card, .test-category {
-  position: relative;
-  padding: 20px;
-  margin: 20px 0;
-  border: 1px solid #aaff00;
-  border-radius: 12px;
-  background: #101820;
-  color: white;
+* {
+    box-sizing: border-box;
 }
 
-.download-card h2, .test-category h3 {
-  color: #aaff00;
+body {
+    margin: 0;
+    padding: 20px;
+    background: #080d18;
+    color: #e8f5e9;
+    font-family: Arial, sans-serif;
 }
 
-.download-link, .test-button, .category-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: #aaff00;
-  color: #080e14;
-  border: 0;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #39ff14;
+}
+
+header h1 {
+    color: #39ff14;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px 0;
+}
+
+nav a {
+    color: #39ff14;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+h2 {
+    color: #39ff14;
+}
+
+.intro {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.download-card {
+    background: #111c2d;
+    border: 1px solid #25445a;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 750px;
+}
+
+.download-card h2 {
+    margin-top: 0;
+}
+
+.download-link {
+    display: inline-block;
+    background: #39ff14;
+    color: #071006;
+    padding: 11px 16px;
+    margin: 8px 5px 8px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download-link:hover {
+    background: white;
 }
 
 .screen-size {
-  color: #aaff00;
-  font-size: 13px;
-  margin-left: 8px;
+    color: #39ff14;
+    font-weight: bold;
 }
 
 .version-choice {
-  margin-top: 14px;
-  padding: 12px;
-  background: #18232c;
-  border: 1px solid #34434d;
-  border-radius: 8px;
+    background: #0a1422;
+    border: 1px solid #29445b;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 12px;
 }
 
-.version-choice p {
-  margin: 5px 0;
+.version-choice strong {
+    color: #39ff14;
 }
 
 .error {
-  color: #ff6868;
-  font-weight: bold;
-}
-
-.preview-photos {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 5px;
-}
-
-.preview-photos img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border: 2px solid #aaff00;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#photoViewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.92);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-#photoViewer img {
-  max-width: 95vw;
-  max-height: 90vh;
-  object-fit: contain;
-  border: 2px solid #aaff00;
-  border-radius: 8px;
-}
-
-#testsArea, #scratchEarlyVersions, #nokiaBaldi {
-  display: none;
+    color: #ff6464;
+    font-weight: bold;
 }
 
 .warning {
-  padding: 14px;
-  margin: 15px 0;
-  border: 1px solid #ffb347;
-  border-radius: 8px;
-  color: #ffcf80;
-  background: #241b10;
-  line-height: 1.6;
+    color: #ffcc66;
+    font-weight: bold;
+}
+
+.preview-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.preview-photos img {
+    width: 130px;
+    max-width: 45%;
+    border: 2px solid #39ff14;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.preview-photos img:hover {
+    opacity: 0.8;
+}
+
+.test-category {
+    display: none;
+}
+
+.test-category.show {
+    display: block;
+}
+
+.category-button,
+.test-button {
+    background: #172b40;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 7px;
+    padding: 12px 18px;
+    margin: 8px 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category-button:hover,
+.test-button:hover {
+    background: #25445a;
 }
 
 .version-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    margin-top: 15px;
 }
 
 .version-item {
-  padding: 12px;
-  background: #18232c;
-  border: 1px solid #34434d;
-  border-radius: 8px;
-  overflow-wrap: anywhere;
+    background: #0a1422;
+    border: 1px solid #29445b;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
 }
 
-.version-item a {
-  color: #aaff00;
-  font-weight: bold;
+#photoViewer {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.version-warning {
-  display: block;
-  margin-top: 7px;
-  color: #ff9b9b;
-  font-size: 13px;
-  line-height: 1.5;
+#photoViewer img {
+    max-width: 95%;
+    max-height: 85vh;
+    border: 2px solid #39ff14;
+    border-radius: 8px;
+}
+
+#photoViewer span {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    color: #78909c;
+    margin-top: 45px;
+    padding: 20px;
 }
 </style>
 </head>
@@ -140,339 +207,318 @@
 <body>
 
 <header>
-  <h1>DUMB NOKIA PROJECTS</h1>
-  <nav>
+    <h1>DUMB NOKIA PROJECTS</h1>
+    <p>Java Games & Projects</p>
+</header>
+
+<nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="downloads.html">Downloads</a>
     <a href="gallery.html">Gallery</a>
     <a href="feedback.html">Feedback</a>
-  </nav>
-</header>
+</nav>
 
-<main>
-
-<h1>Downloads</h1>
-<p>Download my projects and try them on your device!</p>
+<div class="intro">
+    <h2>Downloads</h2>
+    <p>Download my Nokia Java projects and games!</p>
+</div>
 
 <!-- SCRATCH POCKET ENGLISH -->
 <div class="download-card">
+    <h2>Scratch Pocket Edition - English</h2>
 
-  <div class="preview-photos">
-    <img src="english1.jpg" alt="Screenshot 1"
-         onclick="openPhoto(this.src)">
-    <img src="english2.jpg" alt="Screenshot 2"
-         onclick="openPhoto(this.src)">
-  </div>
+    <div class="preview-photos">
+        <img src="./english1.jpg" alt="Scratch English Screenshot"
+             onclick="openPhoto(this.src)">
+        <img src="./english2.jpg" alt="Scratch English Screenshot"
+             onclick="openPhoto(this.src)">
+    </div>
 
-  <h2>Scratch Pocket Edition English</h2>
-  <p>English version of Scratch Pocket Edition.</p>
+    <div class="version-choice">
+        <strong>Version 1 - Landscape</strong>
+        <p>Screen size: <span class="screen-size">320×240</span></p>
+        <p>(Touch &amp; Keyboard Support)</p>
+        <a class="download-link"
+           href="./Scratch_Pocket_English_EGEpro719.jar" download>
+           Download English 320×240
+        </a>
+    </div>
 
-  <div class="version-choice">
-    <strong>Version 1 - Landscape</strong>
-    <p>Screen size: <span class="screen-size">320×240</span></p>
-    <p>(Touch &amp; Keyboard Support)</p>
-    <a class="download-link"
-       href="./Scratch_Pocket_English_EGEpro719.jar" download>
-       Download English 320×240
-    </a>
-  </div>
-
-  <div class="version-choice">
-    <strong>Version 2 - Portrait</strong>
-    <p>Screen size: <span class="screen-size">240×320</span></p>
-    <p>(Touch &amp; Keyboard Support)</p>
-    <a class="download-link"
-       href="./Scratch_Pocket_English_EGEpro719_240x320.jar" download>
-       Download English 240×320
-    </a>
-  </div>
-
+    <div class="version-choice">
+        <strong>Version 2 - Portrait</strong>
+        <p>Screen size: <span class="screen-size">240×320</span></p>
+        <p>(Touch &amp; Keyboard Support)</p>
+        <a class="download-link"
+           href="./Scratch_Pocket_English_EGEpro719_240x320.jar" download>
+           Download English 240×320
+        </a>
+    </div>
 </div>
 
 <!-- SCRATCH POCKET TURKISH -->
 <div class="download-card">
+    <h2>Scratch Pocket Edition - Türkçe</h2>
 
-  <div class="preview-photos">
-    <img src="turkish1.jpg" alt="Turkish Screenshot 1"
-         onclick="openPhoto(this.src)">
-    <img src="turkish2.jpg" alt="Turkish Screenshot 2"
-         onclick="openPhoto(this.src)">
-  </div>
+    <div class="preview-photos">
+        <img src="./turkish1.jpg" alt="Scratch Turkish Screenshot"
+             onclick="openPhoto(this.src)">
+        <img src="./turkish2.jpg" alt="Scratch Turkish Screenshot"
+             onclick="openPhoto(this.src)">
+    </div>
 
-  <h2>Scratch Pocket Edition Turkish</h2>
-  <p>Scratch Pocket Edition'ın Türkçe sürümü.</p>
+    <div class="version-choice">
+        <strong>Version 1 - Landscape</strong>
+        <p>Screen size: <span class="screen-size">320×240</span></p>
+        <p>(Touch &amp; Keyboard Support)</p>
+        <a class="download-link"
+           href="./Scratch_Pocket_Turkish_EGEpro719.jar" download>
+           Download Türkçe 320×240
+        </a>
+    </div>
 
-  <div class="version-choice">
-    <strong>Sürüm 1 - Yatay</strong>
-    <p>Ekran boyutu: <span class="screen-size">320×240</span></p>
-    <p>(Touch &amp; Keyboard Support)</p>
-    <a class="download-link"
-       href="./Scratch_Pocket_Turkish_EGEpro719.jar" download>
-       Türkçe İndir 320×240
-    </a>
-  </div>
-
-  <div class="version-choice">
-    <strong>Sürüm 2 - Dikey</strong>
-    <p>Ekran boyutu: <span class="screen-size">240×320</span></p>
-    <p>(Touch &amp; Keyboard Support)</p>
-    <a class="download-link"
-       href="./Scratch_Pocket_Turkish_EGEpro719_240x320.jar" download>
-       Türkçe İndir 240×320
-    </a>
-  </div>
-
+    <div class="version-choice">
+        <strong>Version 2 - Portrait</strong>
+        <p>Screen size: <span class="screen-size">240×320</span></p>
+        <p>(Touch &amp; Keyboard Support)</p>
+        <a class="download-link"
+           href="./Scratch_Pocket_Turkish_EGEpro719_240x320.jar" download>
+           Download Türkçe 240×320
+        </a>
+    </div>
 </div>
 
 <!-- FNF MINI -->
 <div class="download-card">
+    <h2>Friday Night Funkin' Mini</h2>
 
-  <h2>Friday Night Funkin' Mini</h2>
-  <p class="error">⚠ ERROR FOUND — This version has a known issue.</p>
-  <p>A small Friday Night Funkin' game for Java phones.</p>
-  <p>Screen size: <span class="screen-size">320×240</span></p>
+    <p class="error">
+        ⚠ ERROR FOUND — This version has a known issue.
+    </p>
 
-  <a class="download-link"
-     href="./FNFMini%20(1).jar" download>
-     Download FNF Mini
-  </a>
+    <p>Screen size: <span class="screen-size">320×240</span></p>
+
+    <a class="download-link"
+       href="./FNFMini%20(1).jar" download>
+       Download FNF Mini
+    </a>
+</div>
+
+<!-- PAPER MINECRAFT -->
+<div class="download-card">
+    <h2>Paper Minecraft 4 Chunk</h2>
+
+    <p>A Minecraft-style Java game.</p>
+
+    <div class="version-choice">
+        <strong>English Version</strong>
+        <p>Language: English</p>
+        <p>Screen size: <span class="screen-size">320×240</span></p>
+        <a class="download-link"
+           href="./PaperMinecraft_4_chunk_EN.jar" download>
+           Download Paper Minecraft English
+        </a>
+    </div>
+
+    <div class="version-choice">
+        <strong>Türkçe Version</strong>
+        <p>Dil: Türkçe</p>
+        <p>Ekran boyutu: <span class="screen-size">320×240</span></p>
+        <a class="download-link"
+           href="./PaperMinecraft_4_chunk.jar" download>
+           Paper Minecraft Türkçe İndir
+        </a>
+    </div>
 </div>
 
 <!-- FNF MINI VS TRICKY -->
 <div class="download-card">
+    <h2>Friday Night Funkin' Mini vs Tricky</h2>
 
-  <div class="preview-photos">
-    <img src="fnftricky1.jpg" alt="FNF Tricky Screenshot 1"
-         onclick="openPhoto(this.src)">
-    <img src="fnftricky2.jpg" alt="FNF Tricky Screenshot 2"
-         onclick="openPhoto(this.src)">
-  </div>
+    <div class="preview-photos">
+        <img src="./fnftricky1.jpg" alt="FNF Tricky Screenshot"
+             onclick="openPhoto(this.src)">
+        <img src="./fnftricky2.jpg" alt="FNF Tricky Screenshot"
+             onclick="openPhoto(this.src)">
+    </div>
 
-  <h2>Friday Night Funkin' Mini vs Tricky</h2>
-  <p>A Friday Night Funkin' Mini mod featuring Tricky!</p>
-  <p>Screen size: <span class="screen-size">320×240</span></p>
+    <p>Screen size: <span class="screen-size">320×240</span></p>
 
-  <a class="download-link"
-     href="./FNFMiniVsTricky%20(1).jar" download>
-     Download FNF Mini vs Tricky
-  </a>
+    <a class="download-link"
+       href="./FNFMiniVsTricky%20(1).jar" download>
+       Download FNF Mini vs Tricky
+    </a>
 </div>
-
-<hr>
 
 <!-- TESTS -->
-<h1>Tests</h1>
-<p>Experimental projects and older versions.</p>
+<div class="download-card">
+    <h2>Experimental Projects</h2>
+    <p>Test versions and experimental downloads.</p>
 
-<button class="test-button" onclick="toggleTests()">
-  TESTS
-</button>
+    <button class="test-button" onclick="toggleTests()">
+        Show / Hide Tests
+    </button>
 
-<div id="testsArea">
+    <div id="tests" class="test-category">
 
-  <h2>Test Categories</h2>
+        <!-- SCRATCH PE EARLY VERSIONS -->
+        <div class="version-list">
+            <h2>Scratch Pocket Edition - Early Versions</h2>
 
-  <!-- SCRATCHPE CATEGORY -->
-  <button class="category-button" onclick="toggleEarlyVersions()">
-    ScratchPE Early Versions
-  </button>
+            <p class="warning">
+                ⚠ These are old experimental versions.
+            </p>
 
-  <div id="scratchEarlyVersions">
+            <button class="category-button"
+                    onclick="toggleEarlyVersions()">
+                Show / Hide Early Versions
+            </button>
 
-    <div class="test-category">
+            <div id="earlyVersions" class="test-category">
 
-      <h3>ScratchPE Early Versions</h3>
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.1</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.1.jar" download>Download</a>
+                </div>
 
-      <div class="warning">
-        <strong>⚠ ENGLISH WARNING</strong><br>
-        These applications are for testing purposes or are
-        versions released before the final release.
-        They may contain bugs, incomplete features, or other issues.
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.2</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.2.jar" download>Download</a>
+                </div>
 
-        <hr>
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.3</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.3.jar" download>Download</a>
+                </div>
 
-        <strong>⚠ TÜRKÇE UYARI</strong><br>
-        Bu uygulamalar test amaçlıdır veya yayınlanmadan
-        önceki sürümlerdir. Hatalar, eksik özellikler veya
-        başka sorunlar içerebilir.
-      </div>
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.4</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.4.jar" download>Download</a>
+                </div>
 
-      <p>Screen size: <span class="screen-size">320×240</span></p>
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.5</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.5.jar" download>Download</a>
+                </div>
 
-      <div class="version-list">
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.6</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.6.jar" download>Download</a>
+                </div>
 
-        <div class="version-item">
-          <strong>ScratchPE v0.0.1</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.1.jar" download>Download</a>
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.7</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.7.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.8</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.8.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.0.9</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.0.9.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.1.0</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.1.0.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.1.1</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.1.1.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.1.2</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.1.2.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.1.3</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.1.3.jar" download>Download</a>
+                </div>
+
+                <div class="version-item">
+                    <strong>Scratch PE v0.1.4</strong>
+                    <p class="warning">Experimental version</p>
+                    <a class="download-link" href="./scratchpev0.1.4.jar" download>Download</a>
+                </div>
+
+            </div>
         </div>
 
-        <div class="version-item">
-          <strong>ScratchPE v0.0.2</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.2.jar" download>Download</a>
+        <!-- NOKIA BALDI -->
+        <div class="version-list">
+            <h2>NokiaBaldi</h2>
+
+            <div class="preview-photos">
+                <img src="./baldi1.jpg" alt="NokiaBaldi Screenshot"
+                     onclick="openPhoto(this.src)">
+                <img src="./baldi2.jpg" alt="NokiaBaldi Screenshot"
+                     onclick="openPhoto(this.src)">
+                <img src="./baldi3.jpg" alt="NokiaBaldi Screenshot"
+                     onclick="openPhoto(this.src)">
+            </div>
+
+            <p class="warning">
+                ⚠ NOT RELEASED YET
+            </p>
+
+            <p>This project is currently under development.</p>
+
+            <a class="download-link" href="./BaldiBasics.jar" download>
+                Download NokiaBaldi
+            </a>
         </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.3</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.3.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.4</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.4.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.5</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.5.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.6</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.6.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.7</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.7.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.8</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.8.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.0.9</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.0.9.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.1.0</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.1.0.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.1.1</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.1.1.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.1.2</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.1.2.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.1.3</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.1.3.jar" download>Download</a>
-        </div>
-
-        <div class="version-item">
-          <strong>ScratchPE v0.1.4</strong>
-          <span class="version-warning">⚠ TEST VERSION: This is an early version, not the final release.<br>⚠ TEST SÜRÜMÜ: Bu erken sürümdür, son sürüm değildir.</span>
-          <a href="./scratchpev0.1.4.jar" download>Download</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- NOKIABALDI CATEGORY -->
-  <button class="category-button" onclick="toggleNokiaBaldi()">
-    NokiaBaldi
-  </button>
-
-  <div id="nokiaBaldi">
-
-    <div class="test-category">
-
-      <div class="preview-photos">
-        <img src="baldi1.jpg" alt="Baldi Screenshot 1"
-             onclick="openPhoto(this.src)">
-        <img src="baldi2.jpg" alt="Baldi Screenshot 2"
-             onclick="openPhoto(this.src)">
-        <img src="baldi3.jpg" alt="Baldi Screenshot 3"
-             onclick="openPhoto(this.src)">
-      </div>
-
-      <h3>NokiaBaldi</h3>
-
-      <p class="error">⚠ UNRELEASED VERSION</p>
-
-      <div class="warning">
-        <strong>⚠ ENGLISH WARNING</strong><br>
-        This is an unreleased version.
-        It is for testing and entertainment purposes only.
-
-        <hr>
-
-        <strong>⚠ TÜRKÇE UYARI</strong><br>
-        Bu yayınlanmamış bir sürümdür.
-        Yalnızca test ve eğlence amaçlıdır.
-      </div>
-
-      <p>File: <strong>BaldiBasics.jar</strong></p>
-
-      <a class="download-link"
-         href="./BaldiBasics.jar" download>
-        Download NokiaBaldi
-      </a>
 
     </div>
-  </div>
-
 </div>
-
-</main>
 
 <!-- PHOTO VIEWER -->
 <div id="photoViewer" onclick="closePhoto()">
-  <img id="largePhoto" src="" alt="Expanded screenshot">
+    <span>&times;</span>
+    <img id="viewerImage" src="" alt="Enlarged Screenshot">
 </div>
+
+<footer>
+    <p>DUMB NOKIA PROJECTS © 2026</p>
+    <p>Made by EGEpro719</p>
+</footer>
 
 <script>
 function toggleTests() {
-  const area = document.getElementById("testsArea");
-  area.style.display =
-    area.style.display === "block" ? "none" : "block";
+    document.getElementById("tests").classList.toggle("show");
 }
 
 function toggleEarlyVersions() {
-  const area = document.getElementById("scratchEarlyVersions");
-  area.style.display =
-    area.style.display === "block" ? "none" : "block";
-}
-
-function toggleNokiaBaldi() {
-  const area = document.getElementById("nokiaBaldi");
-  area.style.display =
-    area.style.display === "block" ? "none" : "block";
+    document.getElementById("earlyVersions").classList.toggle("show");
 }
 
 function openPhoto(src) {
-  document.getElementById("largePhoto").src = src;
-  document.getElementById("photoViewer").style.display = "flex";
+    document.getElementById("photoViewer").style.display = "flex";
+    document.getElementById("viewerImage").src = src;
 }
 
 function closePhoto() {
-  document.getElementById("photoViewer").style.display = "none";
-  document.getElementById("largePhoto").src = "";
+    document.getElementById("photoViewer").style.display = "none";
 }
 </script>
 
 </body>
-                                    </html>
-                                    
+</html>
